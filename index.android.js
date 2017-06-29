@@ -6,25 +6,32 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry, StyleSheet, View, Text
 } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
+import './ReactotronConfig';
+import TimerMixin from 'react-timer-mixin';
+
 
 export default class TemanBisnisOke extends Component {
+    componentDidMount(){
+        TimerMixin.setTimeout(
+            () => { SplashScreen.hide();},
+            100
+        );
+    }
+
   render() {
+      SplashScreen.show();
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          reBuild TemanBisnis YOSH!!!
         </Text>
+
         <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
+          Tarataratatararara,{'\n'}
+          Bersabar menuju sukses
         </Text>
       </View>
     );
